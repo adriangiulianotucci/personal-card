@@ -18,7 +18,7 @@ const data = {
   name: chalk.white("           Adrian Tucci"),
   handle: chalk.white("bitandbang / bnb"),
   work: chalk.white("SENIOR ENGINEER at NASA"),
-  twitter: chalk.gray("https://twitter.com/") + chalk.cyan("bitandbang"),
+  twitter: chalk.gray("https://twitter.com/") + chalk.cyan("adriantucci"),
   npm: chalk.gray("https://npmjs.com/") + chalk.red("adriantucci"),
   github:
     chalk.gray("https://github.com/") + chalk.green("adriangiulianotucci"),
