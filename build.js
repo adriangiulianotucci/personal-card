@@ -1,37 +1,52 @@
 "use strict";
 
 // Pull in our modules
-const chalk = require("chalk");
-const boxen = require("boxen");
-const fs = require("fs");
-const path = require("path");
+import chalk from "chalk";
+import boxen from "boxen";
+import * as fs from "fs";
+import * as path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Define options for Boxen
 const options = {
   padding: 1,
   margin: 1,
+  title: "About me",
+  titleAlignment: "center",
+  borderColor: "#d62828",
   borderStyle: "round",
+  float: "center",
 };
 
 // Text + chalk definitions
 const data = {
-  name: chalk.white("           Adrian Tucci"),
-  handle: chalk.white("bitandbang / bnb"),
-  work: chalk.white("SENIOR ENGINEER at NASA"),
-  twitter: chalk.gray("https://twitter.com/") + chalk.cyan("adriantucci"),
-  npm: chalk.gray("https://npmjs.com/") + chalk.red("adriantucci"),
+  name: chalk.hex("eae2b7")("                     Adrian Tucci"),
+  handle: chalk.hex("eae2b7")("bitandbang / bnb"),
+  work: chalk.hex("#fcbf49")("SENIOR ENGINEER at NASA"),
+  twitter:
+    chalk.hex("#fcbf49")("https://twitter.com/") +
+    chalk.hex("#eae2b7")("adriantucci"),
+  npm:
+    chalk.hex("#fcbf49")("https://npmjs.com/") +
+    chalk.hex("#eae2b7")("adriantucci"),
   github:
-    chalk.gray("https://github.com/") + chalk.green("adriangiulianotucci"),
-  linkedin: chalk.gray("https://linkedin.com/in/") + chalk.blue("adriantucci"),
-  web: chalk.cyan("https://adriantucci.im"),
-  npx: chalk.red("npx") + " " + chalk.white("adriantucci"),
-  labelWork: chalk.white.bold("    Work:"),
-  labelTwitter: chalk.white.bold(" Twitter:"),
-  labelnpm: chalk.white.bold("     npm:"),
-  labelGitHub: chalk.white.bold("  GitHub:"),
-  labelLinkedIn: chalk.white.bold("LinkedIn:"),
-  labelWeb: chalk.white.bold("     Web:"),
-  labelCard: chalk.white.bold("    Card:"),
+    chalk.hex("#fcbf49")("https://github.com/") +
+    chalk.hex("#eae2b7")("adriangiulianotucci"),
+  linkedin:
+    chalk.hex("#fcbf49")("https://linkedin.com/in/") +
+    chalk.hex("#eae2b7")("adriantucci"),
+  web: chalk.hex("#eae2b7")("https://adriantucci.im"),
+  npx: chalk.red("npx") + " " + chalk.hex("eae2b7")("adriantucci"),
+  labelWork: chalk.hex("#f77f00").bold("    Work:"),
+  labelTwitter: chalk.hex("#f77f00").bold(" Twitter:"),
+  labelnpm: chalk.hex("#f77f00").bold("     npm:"),
+  labelGitHub: chalk.hex("#f77f00").bold("  GitHub:"),
+  labelLinkedIn: chalk.hex("#f77f00").bold("LinkedIn:"),
+  labelWeb: chalk.hex("#f77f00").bold("     Web:"),
+  labelCard: chalk.hex("#f77f00").bold("    Card:"),
 };
 
 // Actual strings we're going to output
@@ -65,7 +80,4 @@ const output =
   newline + // data.labelWeb + data.web
   carding; // data.labelCard + data.npx
 
-fs.writeFileSync(
-  path.join(__dirname, "bin/output"),
-  chalk.green(boxen(output, options))
-);
+fs.writeFileSync(path.join(__dirname, "bin/output"), boxen(output, options));

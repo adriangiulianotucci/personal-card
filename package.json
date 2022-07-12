@@ -1,6 +1,6 @@
 {
   "name": "adriantucci",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "A personal card for Adrian Tucci",
   "main": "/bin/card.js",
   "bin": {
@@ -32,12 +32,12 @@
     "bin/output"
   ],
   "devDependencies": {
-    "boxen": "^2.1.0",
-    "chalk": "^2.4.1",
+    "boxen": "^7.0.0",
+    "chalk": "^5.0.1",
     "standard": "^12.0.1"
   },
   "bugs": {
     "url": "https://github.com/adriangiulianotucci/personal-card/issues"
   },
-  "dependencies": {}
+  "type": "module"
 }
