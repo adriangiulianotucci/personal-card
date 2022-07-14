@@ -11,10 +11,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const colors = {
-  border: "#5D16A6",
-  titles: "#9683EC",
-  values: "#F18701",
-  fill: "#F35B04",
+  border: "#FFFFFF",
+  titles: "#2d7dd2",
+  values: "#ff6700",
+  fill: "#fcb52a",
 };
 
 // Define options for Boxen
