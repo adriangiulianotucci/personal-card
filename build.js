@@ -10,43 +10,53 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const colors = {
+  border: "#5D16A6",
+  titles: "#9683EC",
+  values: "#F18701",
+  fill: "#F35B04",
+};
+
 // Define options for Boxen
 const options = {
   padding: 1,
   margin: 1,
   title: "About me",
   titleAlignment: "center",
-  borderColor: "#d62828",
+  borderColor: colors.border,
   borderStyle: "round",
   float: "center",
 };
 
 // Text + chalk definitions
 const data = {
-  name: chalk.hex("eae2b7")("                     Adrian Tucci"),
-  handle: chalk.hex("eae2b7")("bitandbang / bnb"),
-  work: chalk.hex("#fcbf49")("SENIOR ENGINEER at NASA"),
+  name: chalk.hex(colors.values)("                     Adrian Tucci"),
+  handle: chalk.hex(colors.fill)("bitandbang / bnb"),
+  work: chalk.hex(colors.values)("SENIOR ENGINEER at NASA"),
   twitter:
-    chalk.hex("#fcbf49")("https://twitter.com/") +
-    chalk.hex("#eae2b7")("adriantucci"),
+    chalk.hex(colors.fill)("https://twitter.com/") +
+    chalk.hex(colors.values)("adriantucci"),
   npm:
-    chalk.hex("#fcbf49")("https://npmjs.com/") +
-    chalk.hex("#eae2b7")("adriantucci"),
+    chalk.hex(colors.fill)("https://npmjs.com/") +
+    chalk.hex(colors.values)("adriantucci"),
   github:
-    chalk.hex("#fcbf49")("https://github.com/") +
-    chalk.hex("#eae2b7")("adriangiulianotucci"),
+    chalk.hex(colors.fill)("https://github.com/") +
+    chalk.hex(colors.values)("adriangiulianotucci"),
   linkedin:
-    chalk.hex("#fcbf49")("https://linkedin.com/in/") +
-    chalk.hex("#eae2b7")("adriantucci"),
-  web: chalk.hex("#eae2b7")("https://adriantucci.im"),
-  npx: chalk.red("npx") + " " + chalk.hex("eae2b7")("adriantucci"),
-  labelWork: chalk.hex("#f77f00").bold("    Work:"),
-  labelTwitter: chalk.hex("#f77f00").bold(" Twitter:"),
-  labelnpm: chalk.hex("#f77f00").bold("     npm:"),
-  labelGitHub: chalk.hex("#f77f00").bold("  GitHub:"),
-  labelLinkedIn: chalk.hex("#f77f00").bold("LinkedIn:"),
-  labelWeb: chalk.hex("#f77f00").bold("     Web:"),
-  labelCard: chalk.hex("#f77f00").bold("    Card:"),
+    chalk.hex(colors.fill)("https://linkedin.com/in/") +
+    chalk.hex(colors.values)("adriantucci"),
+  web: chalk.hex(colors.values)("https://adriantucci.im"),
+  npx:
+    chalk.red.hex(colors.fill)("npx") +
+    " " +
+    chalk.hex(colors.values)("adriantucci"),
+  labelWork: chalk.hex(colors.titles).bold("    Work:"),
+  labelTwitter: chalk.hex(colors.titles).bold(" Twitter:"),
+  labelnpm: chalk.hex(colors.titles).bold("     npm:"),
+  labelGitHub: chalk.hex(colors.titles).bold("  GitHub:"),
+  labelLinkedIn: chalk.hex(colors.titles).bold("LinkedIn:"),
+  labelWeb: chalk.hex(colors.titles).bold("     Web:"),
+  labelCard: chalk.hex(colors.titles).bold("    Card:"),
 };
 
 // Actual strings we're going to output
