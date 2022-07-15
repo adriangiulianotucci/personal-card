@@ -6,12 +6,13 @@ import boxen from "boxen";
 import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
+import gradient from "gradient-string";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const colors = {
-  border: "#FFFFFF",
+  border: "#ffffff",
   titles: "#2d7dd2",
   values: "#ff6700",
   fill: "#fcb52a",
@@ -90,4 +91,28 @@ const output =
   newline + // data.labelWeb + data.web
   carding; // data.labelCard + data.npx
 
-fs.writeFileSync(path.join(__dirname, "bin/output"), boxen(output, options));
+const newOutput =
+  "                     Adrian Tucci / bitandbang / bnb" +
+  "\n" +
+  "\n" +
+  "    Work: SENIOR ENGINEER at NASA" +
+  "\n" +
+  " Twitter: https://twitter.com/adriantucci" +
+  "\n" +
+  "     npm: https://npmjs.com/adriantucci" +
+  "\n" +
+  "  GitHub: https://github.com/adriangiulianotucci" +
+  "\n" +
+  "LinkedIn: https://linkedin.com/in/adriantucci" +
+  "\n" +
+  "     Web: https://adriantucci.im" +
+  "\n" +
+  "\n" +
+  "    Card: npx adriantucci";
+
+const styledOutput = gradient.vice(newOutput);
+// MIND OR VICEEEEE???
+
+const box = boxen(styledOutput, options);
+
+fs.writeFileSync(path.join(__dirname, "bin/output"), box);

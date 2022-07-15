@@ -39,5 +39,8 @@
   "bugs": {
     "url": "https://github.com/adriangiulianotucci/personal-card/issues"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "gradient-string": "^2.0.1"
+  }
 }
