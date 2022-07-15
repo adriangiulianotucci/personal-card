@@ -1,6 +1,6 @@
 {
   "name": "adriantucci",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "A personal card for Adrian Tucci",
   "main": "/bin/card.js",
   "bin": {
